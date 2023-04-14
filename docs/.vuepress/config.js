@@ -11,7 +11,7 @@ export default defineUserConfig({
   title: '博客',
   description: '我的个人网站',
   head: [
-    ['link', { rel: 'icon', href: '/img/hero.png' }],
+    ['link', { rel: 'icon', href: 'favicon.ico' }],
   ],
   port: 8899,
   // open: true,

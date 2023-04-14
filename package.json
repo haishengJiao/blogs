@@ -22,6 +22,7 @@
     "@moefy-canvas/theme-ribbon": "^0.5.2",
     "@moefy-canvas/theme-sakura": "^0.5.2",
     "@moefy-canvas/theme-sparkler": "^0.5.2",
-    "element-plus": "^2.3.3"
+    "element-plus": "^2.3.3",
+    "sakana-widget": "^2.6.0"
   }
 }

@@ -1,10 +1,13 @@
 <template>
   <div>
+    <div id="sakana-widget"></div>
     <canvas id="moefy-canvas"></canvas>
   </div>
 </template>
 
 <script setup name="HomeCanvas">
+import 'sakana-widget/lib/index.css';
+import SakanaWidget from 'sakana-widget';
 import { Popper, PopperShape } from '@moefy-canvas/theme-popper'
 import { Sparkler, SparklerMode } from '@moefy-canvas/theme-sparkler'
 import { Ribbon } from '@moefy-canvas/theme-ribbon'
@@ -52,7 +55,6 @@ const handleRibbon = () => {
     zIndex: 0,
   }
   const el = document.getElementById('moefy-canvas')
-  console.log(el);
   const sparkler = new Ribbon(themeConfig, canvasOptions)
   sparkler.mount(el)
 }
@@ -83,7 +85,6 @@ const handleMeteor = () => {
      zIndex: 0,
   }
   const el = document.getElementById('moefy-canvas')
-  console.log(el);
   const meteor = new Meteor(themeConfig, canvasOptions)
   meteor.mount(el)
 }
@@ -91,6 +92,8 @@ const effectArr = [handleSparkler, handlePopper, handleRibbon, handleSakura, han
 onMounted(() => {
   const randomNumber = Math.floor(Math.random() * effectArr.length)
   effectArr[randomNumber]()
+  // 首页右下角角色
+  new SakanaWidget().mount('#sakana-widget');
 })
 </script>
 
