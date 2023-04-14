@@ -11,6 +11,9 @@ module.exports = {
     },
     'test04',
   ],
+  '/js/': [
+    'js01'
+  ],
   '/vue/': [
     'vue01'
   ]
