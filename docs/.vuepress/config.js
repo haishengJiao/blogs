@@ -11,17 +11,18 @@ export default defineUserConfig({
   title: '博客',
   description: '我的个人网站',
   head: [
-    ['link', { rel: 'icon', href: 'favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
   port: 8899,
   // open: true,
   theme: defaultTheme({
+    lastUpdated: false, // 是否启用 最近更新时间戳 。
+    contributors: false, // 是否启用 贡献者列表 。
     logo: '/img/hero.png',
     // 在这里进行配置
     navbar,
     sidebar
   }),
-  
   plugins: [
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components/'),

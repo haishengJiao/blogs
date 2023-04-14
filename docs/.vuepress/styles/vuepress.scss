@@ -1,4 +1,9 @@
 // vuepress 样式
+:root {
+  // 更改搜索框的宽度
+  --search-input-width: 15rem !important;
+}
+
 .hero {
   position: relative;
   z-index: 10;
@@ -7,4 +12,8 @@
 .features {
   position: relative;
   z-index: 10;
+}
+
+.sidebar {
+  z-index: 11;
 }

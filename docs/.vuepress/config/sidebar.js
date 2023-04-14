@@ -1,15 +1,6 @@
 module.exports = {
   '/html/': [
     'html'
-    // 'html',
-    // '弹性布局',
-    // {
-    //   title: '哈哈哈',
-    //   path: '弹性布局',
-    //   children: [
-    //     { title: '123', path: 'html' }
-    //   ]
-    // }
   ],
   '/test/': [
     'test01',
@@ -20,4 +11,7 @@ module.exports = {
     },
     'test04',
   ],
+  '/vue/': [
+    'vue01'
+  ]
 }
