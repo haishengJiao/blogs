@@ -12,7 +12,6 @@ export default defineUserConfig({
   description: '我的个人网站',
   head: [
     ['link', { rel: 'icon', href: '/img/hero.png' }],
-    ['link', { rel: 'stylesheet', href: '/styles/index.scss' }],
   ],
   port: 8899,
   // open: true,
