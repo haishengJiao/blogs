@@ -16,6 +16,7 @@ module.exports = {
   ],
   '/vue/': [
     'vue01',
-    'vue02'
+    'vue02',
+    'vue03'
   ]
 }
