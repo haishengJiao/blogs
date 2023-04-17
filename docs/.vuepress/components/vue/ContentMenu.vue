@@ -7,11 +7,11 @@
           class="content-menu"
           v-if="showMenu"
           :style="{
-            left: x + 'px',
-            top: y + 'px',
+            left: position.posX + 'px',
+            top: position.posY + 'px',
           }"
         >
-          <div class="menu-list">
+          <div v-size-ob="handleSizeChange" class="menu-list">
             <div class="menu-item" @click="handleClick(item)" v-for="item in menu" :key="item.label">
               {{ item.label }}
             </div>
@@ -25,6 +25,7 @@
 <script setup name="ContentMenu">
 import { computed, ref } from 'vue';
 import useContentMenu from '../hooks/useContentMenu.js'
+import useViewport from '../hooks/useViewport.js'
 const props = defineProps({
   menu: {
     type: Array,
@@ -35,6 +36,34 @@ const emit = defineEmits('select')
 
 const ContentMenuRef =ref(null)
 const { x, y, showMenu } = useContentMenu(ContentMenuRef)
+const w = ref(0) // 菜单宽度
+const h = ref(0) // 菜单高度
+const {vw, vh} = useViewport() // 视口宽高
+
+const position = computed(() => {
+  let posX = x.value
+  let posY = y.value
+  // x 坐标
+  // x 坐标大于了视口宽度减去菜单的宽度表示右边放不下
+  if(x.value > vw.value - w.value) {
+    // 右边空间不足 鼠标点击的坐标减去弹窗的宽度
+    posX -= w.value
+  }
+  // y 坐标
+  // y 坐标大于了视口的高度减去弹窗的高度表示是下边放不下
+  if (y.value > vh.value - h.value) {
+    // 下边空间不足往上移 y 坐标减去视口高度加上弹窗高度
+    posY -= y.value - vh.value + h.value
+  }
+  return { posX, posY }
+})
+
+
+// 获取菜单快高
+const handleSizeChange = ({ width, height }) => {
+  w.value = width
+  h.value = height
+}
 
 const handleClick = (item) => {
   showMenu.value = false
