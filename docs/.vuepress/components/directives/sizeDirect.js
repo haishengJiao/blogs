@@ -1,21 +1,24 @@
 // 映射
 const map = new Map()
-
-// 创建观察者
-const ob = new ResizeObserver((entries) => {
-  // 只要元素发生了变化，都会引发在这个回调函数的执行
-  for (const entry of entries) {
-    const binding = map.get(entry.target)
-    if (binding && binding.value) {
-      // 根据参数决定使用哪种盒模型（默认 border-box）
-      const box = binding.arg !== 'border-box' ? entry.contentBoxSize[0] : entry.borderBoxSize[0]
-      binding.value({
-        width: box.inlineSize,
-        height: box.blockSize
-      })
+let ob = {}
+// 判断当前环境是有 window
+if (typeof window !== 'undefined') {
+  // 创建观察者
+  ob = new ResizeObserver((entries) => {
+    // 只要元素发生了变化，都会引发在这个回调函数的执行
+    for (const entry of entries) {
+      const binding = map.get(entry.target)
+      if (binding && binding.value) {
+        // 根据参数决定使用哪种盒模型（默认 border-box）
+        const box = binding.arg !== 'border-box' ? entry.contentBoxSize[0] : entry.borderBoxSize[0]
+        binding.value({
+          width: box.inlineSize,
+          height: box.blockSize
+        })
+      }
     }
-  }
-})
+  })
+}
 
 export default {
   mounted(el, binding) {
