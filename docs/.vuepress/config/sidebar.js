@@ -15,6 +15,7 @@ module.exports = {
     'js01'
   ],
   '/vue/': [
-    'vue01'
+    'vue01',
+    'vue02'
   ]
 }
