@@ -1,7 +1,7 @@
 <template>
   <div class="my-input">
     <!-- 第一个问题： -->
-    <!-- 在使用的时候吧属性和时间 全部透传到 el-input上 -->
+    <!-- 在使用的时候吧属性和事件 全部透传到 el-input上 -->
     <!-- 使用 $attrs 接收 -->
     <!-- $attrs 会排除 props 传递的属性和事件 -->
     <el-input ref="inputRef" v-bind="$attrs">

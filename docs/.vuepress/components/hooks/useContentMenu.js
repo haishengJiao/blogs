@@ -5,7 +5,7 @@ export default function useContentMenu(containerRef) {
   const x = ref(0)
   const y = ref(0)
 
-  // 时间处理函数
+  // 事件处理函数
   const handleContextMenu = (e) => {
     e.preventDefault()
     e.stopPropagation()

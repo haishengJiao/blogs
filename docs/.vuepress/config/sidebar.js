@@ -11,6 +11,9 @@ module.exports = {
     },
     'test04',
   ],
+  '/css/': [
+    'css01'
+  ],
   '/js/': [
     'js01'
   ],
