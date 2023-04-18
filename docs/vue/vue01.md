@@ -16,5 +16,6 @@ sidebarDepth: 0
 ### 代码
 #### 使用封装的组件
 @[code](../.vuepress/components/vue01.vue)
+
 #### 封装组件
 @[code](../.vuepress/components/vue/MyInput.vue)
