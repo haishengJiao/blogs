@@ -78,22 +78,27 @@ onMounted(() => {
 
 <style lang='scss' scoped>
 .container {
-  background-color: var(--c-bgc);
   height: 500px;
   color: var(--c-text);
+  font-size: 42px;
+  background-color: var(--c-bgc);
+
   :deep(.el-switch__label) {
     color: var(--c-text);
   }
+
   :deep(.el-switch__label.is-active) {
     color: var(--el-color-primary);
   }
+
   .el-button--primary {
     --el-button-bg-color: var(--c-e-btn);
     --el-button-border-color: var(--c-e-btn)
   }
+
   .el-button:hover {
-    border-color: var(--c-e-btn-hover);
     background-color: var(--c-e-btn-hover);
+    border-color: var(--c-e-btn-hover);
   }
 }
 </style>

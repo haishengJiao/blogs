@@ -34,5 +34,3 @@ const emit = defineEmits(['update:formData'])
 // })
 const formDataComputed = useVModel(props, 'formData', emit)
 </script>
-
-<style lang='scss' scoped></style>

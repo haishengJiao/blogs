@@ -5,6 +5,7 @@ import sidebar from './config/sidebar'
 import path from 'path'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import StylelintPlugin from 'stylelint-webpack-plugin'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -24,6 +25,13 @@ export default defineUserConfig({
     sidebar
   }),
   plugins: [
+    new StylelintPlugin({
+      files: ['**/*.{html,vue,css,sass,scss}'], // 按需配置
+        fix: false,
+        cache: true,
+        emitError: true,
+        failOnError: false
+    }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components/'),
     }),

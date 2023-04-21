@@ -22,9 +22,10 @@ const handleSizeChange = (size) => {
 .vue03 {
   width: 500px;
   height: 500px;
-  background-color: #0f2f54;
   overflow: auto;
+  background-color: #0f2f54;
   resize: both;
+
   &>div {
     color: #fff;
     font-size: 2rem;

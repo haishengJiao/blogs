@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:stylelint": "stylelint docs/.vuepress/**/*.{vue,scss,css,sass,less,html} --fix"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,16 @@
   "devDependencies": {
     "@vuepress/plugin-register-components": "^2.0.0-beta.61",
     "@vuepress/plugin-search": "^2.0.0-beta.61",
+    "postcss": "^8.4.23",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.6",
+    "stylelint": "^15.5.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^4.6.0",
+    "stylelint-webpack-plugin": "^4.1.1",
     "vuepress": "^2.0.0-beta.61"
   },
   "dependencies": {

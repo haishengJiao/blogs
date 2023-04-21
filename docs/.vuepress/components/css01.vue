@@ -15,17 +15,20 @@
   text-align: center;
   background-color: #000;
   filter: contrast(30);
+
   .text {
-    font-size: 2.6rem;
     color: #fff;
-    animation: showUp 3s forwards;
+    font-size: 2.6rem;
+    animation: show-up 3s forwards;
   }
 }
-@keyframes showUp {
+
+@keyframes show-up {
   from {
     letter-spacing: -40px;
     filter: blur(10px);
   }
+
   to {
     letter-spacing: 10px;
     filter: blur(2px);

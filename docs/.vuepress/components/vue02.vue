@@ -47,6 +47,7 @@ const choose3 = ref('')
     width: 500px;
     height: 500px;
   }
+
   .block-one, .block-two, .block-three {
     &>div {
       color: #fff;
@@ -54,22 +55,25 @@ const choose3 = ref('')
       text-align: center;
     }
   }
+
   .block-one {
     background-color: #e65e52;
   }
+
   .block-two {
     position: relative;
     margin-top: 20px;
     background-color: #f1b445;
   }
+
   .block-three {
     position: absolute;
-    left: 50%;
     bottom: 50px;
-    transform: translate(-50%);
-    height: 250px;
+    left: 50%;
     width: 400px;
+    height: 250px;
     background-color: #55bd48;
+    transform: translate(-50%);
   }
 }
 </style>

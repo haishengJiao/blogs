@@ -70,5 +70,3 @@ const handleUpdate = (val) => {
   formData.value = val
 }
 </script>
-
-<style lang='scss' scoped></style>

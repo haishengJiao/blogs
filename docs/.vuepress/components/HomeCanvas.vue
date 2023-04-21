@@ -96,5 +96,3 @@ onMounted(() => {
   new SakanaWidget().mount('#sakana-widget');
 })
 </script>
-
-<style lang='scss' scoped></style>

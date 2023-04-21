@@ -96,19 +96,21 @@ const handleAfterEnter = (el) => {
 <style lang='scss' scoped>
 .content-menu {
   position: fixed;
-  background-color: #eee;
-  box-shadow: 1px 1px 2px rgba(0 , 0, 0, 0.2), 1px 1px 5px rgba(0 , 0, 0, 0.2);
   min-width: 100px;
-  border-radius: 5px;
-  font-size: 12px;
+  overflow: hidden;
   color: #1d1d1f;
+  font-size: 12px;
   line-height: 1.8;
   white-space: nowrap;
-  overflow: hidden;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgb(0 0 0 / 20%), 1px 1px 5px rgb(0 0 0 / 20%);
+
   .menu-list {
     .menu-item {
       text-align: center;
       cursor: pointer;
+
       &:hover {
         color: #fff;
         background-color: var(--c-brand-light);
