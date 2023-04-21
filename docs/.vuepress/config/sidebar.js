@@ -21,6 +21,7 @@ module.exports = {
     'vue01',
     'vue02',
     'vue03',
-    'vue04'
+    'vue04',
+    'vue05'
   ]
 }
