@@ -11,7 +11,7 @@ import useVModel from '../hooks/useVModel.js'
 const props = defineProps({
   formData: {
     type: Object,
-    default: () => {}
+    default: () => ({})
   }
 })
 const emit = defineEmits(['update:formData'])

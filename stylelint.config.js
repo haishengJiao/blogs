@@ -9,13 +9,13 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ["**/*.{html,vue}"],
-      customSyntax: "postcss-html"
+      files: ['**/*.{html,vue}'],
+      customSyntax: 'postcss-html'
     },
     {
-      files: ["**/*.less"],
-      customSyntax: "postcss-less"
-    },
+      files: ['**/*.less'],
+      customSyntax: 'postcss-less'
+    }
   ],
   rules: {
     'selector-class-pattern': [

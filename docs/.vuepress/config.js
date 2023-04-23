@@ -11,9 +11,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: '博客',
   description: '我的个人网站',
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-  ],
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   port: 8899,
   // open: true,
   theme: defaultTheme({
@@ -27,22 +25,22 @@ export default defineUserConfig({
   plugins: [
     new StylelintPlugin({
       files: ['**/*.{html,vue,css,sass,scss}'], // 按需配置
-        fix: false,
-        cache: true,
-        emitError: true,
-        failOnError: false
+      fix: false,
+      cache: true,
+      emitError: true,
+      failOnError: false
     }),
     registerComponentsPlugin({
-      componentsDir: path.resolve(__dirname, './components/'),
+      componentsDir: path.resolve(__dirname, './components/')
     }),
     searchPlugin({
       locales: {
         '/': {
-          placeholder: 'ctrl + k',
+          placeholder: 'ctrl + k'
         },
         '/zh/': {
-          placeholder: '搜索',
-        },
+          placeholder: '搜索'
+        }
       },
       hotKeys: [
         {
@@ -50,6 +48,6 @@ export default defineUserConfig({
           ctrl: true
         }
       ]
-    }),
+    })
   ]
 })

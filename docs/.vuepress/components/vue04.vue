@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-form :model="formData" label-width="120px" :rules="formDataRules" ref="ruleFormRef">
+    <el-form
+      :model="formData"
+      label-width="120px"
+      :rules="formDataRules"
+      ref="ruleFormRef"
+    >
       <el-form-item label="Activity name" prop="name">
         <FormOne :formData="formData" @update:formData="handleUpdate"></FormOne>
       </el-form-item>
@@ -8,16 +13,27 @@
         <FormTwo :formData="formData" @update:formData="handleUpdate"></FormTwo>
       </el-form-item>
       <el-form-item label="Instant delivery">
-        <FormThree :formData="formData" @update:formData="handleUpdate"></FormThree>
+        <FormThree
+          :formData="formData"
+          @update:formData="handleUpdate"
+        ></FormThree>
       </el-form-item>
       <el-form-item label="Activity type" prop="type">
-        <FormFour :formData="formData" @update:formData="handleUpdate"></FormFour>
+        <FormFour
+          :formData="formData"
+          @update:formData="handleUpdate"
+        ></FormFour>
       </el-form-item>
       <el-form-item label="Resources" prop="resource">
-        <FormFive :formData="formData" @update:formData="handleUpdate"></FormFive>
+        <FormFive
+          :formData="formData"
+          @update:formData="handleUpdate"
+        ></FormFive>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit(ruleFormRef)">Create</el-button>
+        <el-button type="primary" @click="onSubmit(ruleFormRef)"
+          >Create</el-button
+        >
       </el-form-item>
     </el-form>
   </div>
@@ -36,7 +52,7 @@ const formData = ref({
   region: '',
   delivery: false,
   type: [],
-  resource: '',
+  resource: ''
 })
 const formDataRules = reactive({
   name: [
@@ -44,14 +60,27 @@ const formDataRules = reactive({
     { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' }
   ],
   region: [
-    { required: true, message: 'Please select Activity zone', trigger: 'change' }
+    {
+      required: true,
+      message: 'Please select Activity zone',
+      trigger: 'change'
+    }
   ],
   type: [
-    { type: 'array', required: true, message: 'Please select at least one activity type', trigger: 'change' }
+    {
+      type: 'array',
+      required: true,
+      message: 'Please select at least one activity type',
+      trigger: 'change'
+    }
   ],
   resource: [
-    { required: true, message: 'Please select activity resource', trigger: 'change' }
-  ],
+    {
+      required: true,
+      message: 'Please select activity resource',
+      trigger: 'change'
+    }
+  ]
 })
 const ruleFormRef = ref()
 

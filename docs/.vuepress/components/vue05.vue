@@ -23,7 +23,7 @@
 </template>
 
 <script setup name="vue05">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
 
 const colorValue = ref('light')
 const getSKIN = () => {
@@ -33,7 +33,7 @@ const getSKIN = () => {
 }
 
 const changeSkin = (val) => {
-  console.log(val);
+  console.log(val)
   localStorage.setItem('SKIN', val)
   toggleHtmlClass(val)
 }
@@ -52,17 +52,17 @@ const color2 = ref()
 
 const changeColor1 = (val) => {
   localStorage.setItem('COLOR', val)
-  const root = document.querySelector(":root")
+  const root = document.querySelector(':root')
   root.style.setProperty('--c-e-btn', val)
 }
 const changeColor2 = (val) => {
   localStorage.setItem('HOVER_COLOR', val)
-  const root = document.querySelector(":root")
+  const root = document.querySelector(':root')
   root.style.setProperty('--c-e-btn-hover', val)
 }
 onMounted(() => {
   getSKIN()
-  const root = document.querySelector(":root")
+  const root = document.querySelector(':root')
   const color = localStorage.getItem('COLOR')
   const hover = localStorage.getItem('HOVER_COLOR')
   if (color) {
@@ -71,12 +71,12 @@ onMounted(() => {
   if (hover) {
     root.style.setProperty('--c-e-btn-hover', hover)
   }
-  color1.value = getComputedStyle(root).getPropertyValue("--c-e-btn")
-  color2.value = getComputedStyle(root).getPropertyValue("--c-e-btn-hover")
+  color1.value = getComputedStyle(root).getPropertyValue('--c-e-btn')
+  color2.value = getComputedStyle(root).getPropertyValue('--c-e-btn-hover')
 })
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .container {
   height: 500px;
   color: var(--c-text);
@@ -93,7 +93,7 @@ onMounted(() => {
 
   .el-button--primary {
     --el-button-bg-color: var(--c-e-btn);
-    --el-button-border-color: var(--c-e-btn)
+    --el-button-border-color: var(--c-e-btn);
   }
 
   .el-button:hover {

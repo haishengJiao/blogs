@@ -6,7 +6,7 @@
 
 <script setup name="css01"></script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .container {
   display: flex;
   align-items: center;

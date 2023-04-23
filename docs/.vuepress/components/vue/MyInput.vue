@@ -31,11 +31,12 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .my-input {
   transition: 0.3s;
 
-  &:hover,&:focus-within {
+  &:hover,
+  &:focus-within {
     filter: drop-shadow(0 0 3px rgb(0 0 0 / 10%));
   }
 }

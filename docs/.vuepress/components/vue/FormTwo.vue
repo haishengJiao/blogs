@@ -1,5 +1,8 @@
 <template>
-  <el-select v-model="formDataComputed.region" placeholder="please select your zone">
+  <el-select
+    v-model="formDataComputed.region"
+    placeholder="please select your zone"
+  >
     <el-option label="Zone one" value="shanghai" />
     <el-option label="Zone two" value="beijing" />
   </el-select>
@@ -11,7 +14,7 @@ import useVModel from '../hooks/useVModel.js'
 const props = defineProps({
   formData: {
     type: Object,
-    default: () => {}
+    default: () => ({})
   }
 })
 const emit = defineEmits(['update:formData'])

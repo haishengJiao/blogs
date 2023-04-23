@@ -6,8 +6,7 @@
 </template>
 
 <script setup name="vue03">
-import { ref } from 'vue';
-
+import { ref } from 'vue'
 
 const width = ref(0)
 const height = ref(0)
@@ -18,7 +17,7 @@ const handleSizeChange = (size) => {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .vue03 {
   width: 500px;
   height: 500px;
@@ -26,7 +25,7 @@ const handleSizeChange = (size) => {
   background-color: #0f2f54;
   resize: both;
 
-  &>div {
+  & > div {
     color: #fff;
     font-size: 2rem;
     text-align: center;

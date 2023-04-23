@@ -10,7 +10,10 @@ if (typeof window !== 'undefined') {
       const binding = map.get(entry.target)
       if (binding && binding.value) {
         // 根据参数决定使用哪种盒模型（默认 border-box）
-        const box = binding.arg !== 'border-box' ? entry.contentBoxSize[0] : entry.borderBoxSize[0]
+        const box =
+          binding.arg !== 'border-box'
+            ? entry.contentBoxSize[0]
+            : entry.borderBoxSize[0]
         binding.value({
           width: box.inlineSize,
           height: box.blockSize
@@ -33,5 +36,5 @@ export default {
     ob.unobserve(el)
     // 全局map可能造成内存泄漏，在元素移除删除
     map.delete(el)
-  },
+  }
 }

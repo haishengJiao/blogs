@@ -2,17 +2,26 @@
   <div ref="ContentMenuRef" class="1">
     <slot></slot>
     <Teleport to="body">
-      <Transition @beforeEnter="handleBeforeEnter" @enter="handleEnter" @afterEnter="handleAfterEnter">
+      <Transition
+        @beforeEnter="handleBeforeEnter"
+        @enter="handleEnter"
+        @afterEnter="handleAfterEnter"
+      >
         <div
           class="content-menu"
           v-if="showMenu"
           :style="{
             left: position.posX + 'px',
-            top: position.posY + 'px',
+            top: position.posY + 'px'
           }"
         >
           <div v-size-ob="handleSizeChange" class="menu-list">
-            <div class="menu-item" @click="handleClick(item)" v-for="item in menu" :key="item.label">
+            <div
+              class="menu-item"
+              @click="handleClick(item)"
+              v-for="item in menu"
+              :key="item.label"
+            >
               {{ item.label }}
             </div>
           </div>
@@ -23,7 +32,7 @@
 </template>
 
 <script setup name="ContentMenu">
-import { computed, ref } from 'vue';
+import { computed, ref } from 'vue'
 import useContentMenu from '../hooks/useContentMenu.js'
 import useViewport from '../hooks/useViewport.js'
 const props = defineProps({
@@ -32,20 +41,21 @@ const props = defineProps({
     default: () => []
   }
 })
+console.log(props)
 const emit = defineEmits('select')
 
-const ContentMenuRef =ref(null)
+const ContentMenuRef = ref(null)
 const { x, y, showMenu } = useContentMenu(ContentMenuRef)
 const w = ref(0) // 菜单宽度
 const h = ref(0) // 菜单高度
-const {vw, vh} = useViewport() // 视口宽高
+const { vw, vh } = useViewport() // 视口宽高
 
 const position = computed(() => {
   let posX = x.value
   let posY = y.value
   // x 坐标
   // x 坐标大于了视口宽度减去菜单的宽度表示右边放不下
-  if(x.value > vw.value - w.value) {
+  if (x.value > vw.value - w.value) {
     // 右边空间不足 鼠标点击的坐标减去弹窗的宽度
     posX -= w.value
   }
@@ -57,7 +67,6 @@ const position = computed(() => {
   }
   return { posX, posY }
 })
-
 
 // 获取菜单快高
 const handleSizeChange = ({ width, height }) => {
@@ -72,7 +81,7 @@ const handleClick = (item) => {
 
 // 元素加入到页面中之前触发
 const handleBeforeEnter = (el) => {
-  el.style.height = 0 
+  el.style.height = 0
 }
 
 // 元素加到页面之后的钩子函数
@@ -93,7 +102,7 @@ const handleAfterEnter = (el) => {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .content-menu {
   position: fixed;
   min-width: 100px;
