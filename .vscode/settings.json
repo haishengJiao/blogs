@@ -1,9 +1,9 @@
 {
   // 开启stylelint自动修复
   "editor.codeActionsOnSave": {
-    "source.fixAll": true, // 开启自动修复
-    "source.fixAll.stylelint": true, // 开启stylelint自动修复
-    "source.fixAll.eslint": true
+    "source.fixAll": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   // 保存的时候自动格式化
   "editor.formatOnSave": false,
