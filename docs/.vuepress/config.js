@@ -12,7 +12,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: '博客',
   description: '我的个人网站',
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/vuepress/favicon.ico' }]],
   port: 8899,
   // open: true,
   theme: defaultTheme({

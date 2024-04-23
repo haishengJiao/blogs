@@ -35,13 +35,12 @@
 import { computed, ref } from 'vue'
 import useContentMenu from '../hooks/useContentMenu.js'
 import useViewport from '../hooks/useViewport.js'
-const props = defineProps({
+defineProps({
   menu: {
     type: Array,
     default: () => []
   }
 })
-console.log(props)
 const emit = defineEmits('select')
 
 const ContentMenuRef = ref(null)

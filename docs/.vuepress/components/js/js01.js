@@ -57,5 +57,3 @@ function isFullCombination(datas) {
   const n2 = datas.length
   return n1 === n2
 }
-
-console.log(isFullCombination(inputData))

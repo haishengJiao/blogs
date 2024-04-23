@@ -33,7 +33,6 @@ const getSKIN = () => {
 }
 
 const changeSkin = (val) => {
-  console.log(val)
   localStorage.setItem('SKIN', val)
   toggleHtmlClass(val)
 }
