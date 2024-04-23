@@ -8,6 +8,7 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 
 export default defineUserConfig({
+  base: '/vuepress/',
   lang: 'zh-CN',
   title: '博客',
   description: '我的个人网站',
